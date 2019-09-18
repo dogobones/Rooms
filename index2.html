@@ -1,0 +1,122 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>Cover· Rooms</title>
+
+      <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.css" integrity="sha256-NzJV8FM8PMh2oiegnNlDYmcbEUm4ERJmZIlNftbJxHU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <style>
+      /*CSS Cover*/
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      /*CSS Rooms*/
+      .resizable { width: 150px; height: 150px; padding: 3px; position: absolute !important; }
+      .resizable h3 { text-align: center; margin: 0; }
+      .line div { display: inline-block; border: 1px solid black; }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="public/css/cover.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Rooms</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="#">Dashboard</a>
+        <a class="nav-link" href="#">Acerca de</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Rooms</h1>
+    <p class="lead">Monitorea los equipos activos de los sitios.</p>
+    <p class="lead">
+      <button type="button" class="btn btn-lg btn-info "data-toggle="modal" data-target="#AgregarArea" >Agregar área</button>
+    </p>
+
+    <!-- Modal -->
+    <div class="modal fade" id="AgregarArea" tabindex="-1" role="dialog" aria-labelledby="AgregarAreaLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <h5 class="modal-title" id="AgregarAreaLabel"><i class="fas fa-plus-square"></i> Agregar área</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text">Nombre:</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Nombre del área" aria-label="Nombre del área">
+        </div>
+        <select id="equipos" style="width: 100%;">
+          <option value="0">Equipos:</option>
+          <option value="1">Antena 1</option>
+          <option value="2">Antena 2</option>
+          <option value="3">Antena 3</option>
+        </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button id="AgregarAreaButton" type="button" class="btn btn-primary">Confirmar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Sitwifi. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script>
+$( function() {
+$( ".resizable" ).draggable({
+  containment: "#containment-wrapper",
+  snap: true
+  });
+  $( ".resizable" ).resizable({
+    containment: "#containment-wrapper",
+      minHeight: 50,
+      minWidth: 50
+  });
+} );
+</script>
+</body>
+</html>
